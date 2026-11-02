@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0d0f">
+  <meta name="description" content="Nexo Premium: pruebe productos reales dentro de espacios virtuales antes de pedirlos.">
+  <title>Nexo Premium — Diseñe su espacio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Nexo Premium, inicio"><span class="brand-dot"></span><span>Nexo <i>Premium</i></span></a>
+    <div class="top-context"><span class="live-dot"></span> Configurador espacial</div>
+    <button class="menu-trigger" id="infoBtn" type="button">Cómo funciona <span>↗</span></button>
+  </header>
+
+  <main id="inicio">
+    <section class="intro">
+      <div class="eyebrow"><span>01</span><i></i> Su espacio, antes de comprar</div>
+      <h1>La casa no se imagina.<br><em>Se compone.</em></h1>
+      <p>Entre a un escenario, elija piezas reales del catálogo y descubra cómo conviven antes de pedirlas.</p>
+      <a class="scroll-cue" href="#configurador"><span class="scroll-mark"></span> Explorar espacios</a>
+    </section>
+
+    <section class="workspace" id="configurador">
+      <div class="workspace-head">
+        <div><div class="eyebrow"><span>02</span><i></i> Elija el espacio</div><h2>Una habitación.<br><em>Tres decisiones.</em></h2></div>
+        <div class="workspace-note">Arrastre una pieza al escenario<br>o pulse añadir para verla aquí.</div>
+      </div>
+      <nav class="room-tabs" aria-label="Escenarios" id="roomTabs"></nav>
+
+      <div class="config-shell">
+        <aside class="catalog-panel" id="catalogPanel">
+          <div class="panel-head"><div><span class="panel-label">Piezas disponibles</span><strong id="roomName">Sala</strong></div><button class="close-panel" id="closePanel" type="button" aria-label="Cerrar catálogo">×</button></div>
+          <label class="searchbox"><span>⌕</span><input id="search" type="search" placeholder="Buscar una pieza…" autocomplete="off"></label>
+          <div class="subfilters" id="subfilters"></div>
+          <div class="catalog-scroll" id="productList" aria-live="polite"></div>
+        </aside>
+
+        <div class="stage-wrap">
+          <div class="stage-topline"><span id="sceneCaption">Sala · composición abierta</span><span class="stage-count"><b id="placedCount">0</b> / 3 piezas</span></div>
+          <div class="stage scene-sala" id="stage" aria-label="Escenario interactivo">
+            <div class="scene-light"></div><div class="window-glow"></div><div class="scene-plane"></div>
+            <div class="room-prop prop-a"></div><div class="room-prop prop-b"></div><div class="room-prop prop-c"></div>
+            <div class="drop-hint" id="dropHint"><span class="hint-ring">＋</span><strong>Suelte una pieza aquí</strong><small>o selecciónela desde el catálogo</small></div>
+            <div id="placedLayer"></div>
+            <div class="stage-toast" id="toast" role="status" aria-live="polite"></div>
+          </div>
+          <div class="stage-actions"><button class="ghost-btn" id="resetBtn" type="button">↺ Reiniciar espacio</button><button class="ghost-btn" id="shareBtn" type="button">↗ Compartir composición</button><button class="primary-btn" id="catalogBtn" type="button">+ Añadir pieza</button></div>
+        </div>
+
+        <aside class="selection-panel" id="selectionPanel" aria-live="polite"><div class="selection-empty"><span class="selection-mark">◌</span><strong>Seleccione una pieza</strong><p>Cuando coloque un producto podrá moverlo, girarlo y ajustar su escala desde aquí.</p></div></aside>
+      </div>
+    </section>
+
+    <section class="manifesto"><div class="eyebrow"><span>03</span><i></i> La diferencia está en verlo</div><blockquote>“No compre una pieza aislada.<br><em>Diseñe la sensación completa.</em>”</blockquote><div class="manifesto-foot"><span>340 productos del catálogo Nexo</span><span>Hasta 3 piezas por composición</span><span>Pedido directo por WhatsApp</span></div></section>
+  </main>
+
+  <footer><span>Nexo Premium · Showroom espacial</span><span>Precios en USD · Entrega en La Habana</span></footer>
+  <dialog id="infoDialog"><button class="dialog-close" id="dialogClose" type="button">×</button><span class="panel-label">Nexo Premium / guía rápida</span><h2>Construya antes<br><em>de decidir.</em></h2><ol><li><b>Elija un espacio</b><span>Sala, cocina, garaje o baño.</span></li><li><b>Encuentre una pieza</b><span>Arrástrela o pulse añadir.</span></li><li><b>Ajústela a su gusto</b><span>Mueva, gire, escale o quite.</span></li><li><b>Pida la composición</b><span>Envíe la selección por WhatsApp.</span></li></ol><button class="primary-btn" id="dialogStart" type="button">Empezar a diseñar</button></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
